@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import Main from './components/Main'
 
-const elem = React.createElement('h1',null,'Hello World!');
-
-ReactDom.render(elem,document.getElementById('root'));
+ReactDom.render(<Main></Main>,document.getElementById('root'));
