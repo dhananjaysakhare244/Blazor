@@ -7,10 +7,10 @@ class Photo extends Component{
             <img src={post.imageLink} alt={post.description} className="photo"></img>
             <figcaption><p>{post.description}</p></figcaption>
             <div className="button-container">
-            <button className="remove-button">Remove</button>
+            <button className="remove-button" onClick={()=>this.props.onRemovePhoto(post)}>Remove</button>
             </div>
         </figure>
     }
 }
-
+ 
 export default Photo
