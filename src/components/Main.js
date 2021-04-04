@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import Title from "./Title";
 import PhotoWall from "./PhotoWall";
-import AddPhoto from "./AddPhoto";
 import { Route } from "react-router-dom";
 //array
 class Main extends Component {
-  constructor() {
-    super();
+  componentDidMount() {
+    this.props.removePost(1);
   }
   render() {
+    console.log(this.props);
     return (
       <div>
         <Route
@@ -17,7 +17,7 @@ class Main extends Component {
           render={() => (
             <div>
               <Title title={"Photowall"} />
-              <PhotoWall posts={this.props.post} />
+              <PhotoWall {...this.props} />
             </div>
           )}
         />

@@ -16,7 +16,9 @@ class Photo extends Component {
         <div className="button-container">
           <button
             className="remove-button"
-            onClick={() => this.props.onRemovePhoto(post)}
+            onClick={() => {
+              this.props.removePost(1);
+            }}
           >
             Remove
           </button>

@@ -13,11 +13,7 @@ class PhotoWall extends Component {
               return y.id - x.id;
             })
             .map((post) => (
-              <Photo
-                key={post.id}
-                post={post}
-                onRemovePhoto={this.props.onRemovePhoto}
-              />
+              <Photo key={post.id} post={post} {...this.props} />
             ))}
         </div>
       </div>
