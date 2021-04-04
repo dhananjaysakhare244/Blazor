@@ -4,9 +4,6 @@ import PhotoWall from "./PhotoWall";
 import { Route } from "react-router-dom";
 //array
 class Main extends Component {
-  componentDidMount() {
-    this.props.removePost(1);
-  }
   render() {
     console.log(this.props);
     return (
