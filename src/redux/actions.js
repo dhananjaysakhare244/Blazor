@@ -13,3 +13,9 @@ export function addPost(post) {
     post,
   };
 }
+export function addComment(comment) {
+  return {
+    type: "ADD_COMMENT",
+    comment,
+  };
+}
