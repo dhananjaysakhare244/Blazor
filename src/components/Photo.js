@@ -27,6 +27,14 @@ class Photo extends Component {
           >
             Remove
           </button>
+          <Link className="button" to={`/single/${post.id}`}>
+            <div className="comment-count">
+              <div className="speech-bubble"></div>
+              {this.props.comments[this.props.id]
+                ? this.props.comments[this.props.id].length
+                : 0}
+            </div>
+          </Link>
         </div>
       </figure>
     );
