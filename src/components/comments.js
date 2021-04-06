@@ -8,10 +8,10 @@ class Comments extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const comment = event.target.elements.comment.value;
-    this.props.addComment(comment);
-    console.log(comment);
+    this.props.addComment(comment, this.props.id);
   }
   render() {
+    console.log("comments" + this.props.comments);
     return (
       <div className="comment">
         {this.props.comments?.map((comment, index) => {

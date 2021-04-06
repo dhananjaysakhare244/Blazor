@@ -1,13 +1,22 @@
 import posts from "../data/posts";
 import { combineReducers } from "redux";
-function comment(state = [], action) {
+function comment(state = {}, action) {
   switch (action.type) {
     case "ADD_COMMENT":
-      return [...state, action.comment];
+      if (!state[action.postId]) {
+        //[action.postId] is anootation in TypeScript that we are adding it as key
+        //[action.comment] is an actualt array
+        return { ...state, [action.postId]: [action.comment] };
+      } else {
+        return {
+          ...state,
+          [action.postId]: [...state[action.postId], action.comment],
+        };
+      }
+
     default:
       return state;
   }
-  return state;
 }
 function post(state = posts, action) {
   switch (action.type) {
