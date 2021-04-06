@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Title from "./Title";
 import PhotoWall from "./PhotoWall";
 import AddPhoto from "./AddPhoto";
 import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Single from "./Single";
 //array
 class Main extends Component {
   render() {
@@ -28,6 +28,10 @@ class Main extends Component {
           path="/addPhoto"
           render={() => <AddPhoto {...this.props} />}
         />
+        <Route
+          path="/single/:id"
+          render={(params) => <Single {...this.props} {...params} />}
+        ></Route>
       </div>
     );
   }
