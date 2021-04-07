@@ -12,7 +12,6 @@ class Comments extends Component {
     event.target.elements.comment.value = "";
   }
   render() {
-    console.log("comments" + this.props.comments);
     return (
       <div className="comment">
         {this.props.comments?.map((comment, index) => {
